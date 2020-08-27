@@ -45,13 +45,49 @@ $box-shadow-sm: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   }
 }
 
-.center {
-  // width: 70%;
-  // margin: 0 auto;
+.upload-wrapper {
+  // display: flex;
+  .upload {
+    margin: auto 0;
+    button {
+      color: $text-color2;
+      font-weight: bold;
+      background-color: $text-color1;
+    }
+  }
+}
+
+.img-preview {
+  height: 5em;
+  width: 5em;
+  img {
+    // border-radius: 50px;
+    height: 100%;
+    width: 100%;
+    transition: all 0.4s ease-in-out;
+    &:hover {
+      transform: scale(1.4);
+    }
+  }
+}
+
+.alert {
+  background-color: $text-color2;
+  color: rgba(239,67,35,1);
+  font-size: 0.85em;
+  button {
+    color: $text-color1;
+    padding: 0.5em;
+    font-size: 1em;
+  }
 }
 
 #gender {
   padding: 6px 12px;
+}
+
+.required-icon {
+  color: rgba(239,67,35,1);
 }
 
 @media(min-width: 1024px) {

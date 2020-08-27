@@ -1,1 +1,19 @@
-<p>show-user works!</p>
+<div class="wrapper">
+  <div class="card" *ngFor="let user of users">
+    <div class="card-img">
+      <img [src]="'../assets/users/'+user.mobile+'.jpg'" [alt]="'../assets/users/default_1.png'">
+    </div>
+    <div class="card-name">
+      <p>{{ user.fname }} {{ user.mname }} {{ user.lname }}</p>
+    </div>
+    <div class="card-gender">
+      <p><i class="fa" [ngClass]="{'fa-male': user.gender==='Male', 'fa-female': user.gender!=='Male'}" style="font-size:28px"></i> {{ user.gender }}</p>
+    </div>
+    <div class="card-address">
+      <p><i class="fa fa-address-book" style="font-size:24px"></i> {{ user.address }}</p>
+    </div>
+    <div class="card-mobile">
+      <p><i class="fa fa-phone-square" style="font-size:24px"></i> <a [href]="'tel:'+user.mobile"> {{ user.mobile }}</a></p>
+    </div>
+  </div>
+</div>
