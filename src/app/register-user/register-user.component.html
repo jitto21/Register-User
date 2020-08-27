@@ -1,0 +1,81 @@
+<div class="form-wrapper">
+  <h5 id="heading">New User</h5>
+  <form #registerForm="ngForm" class="" (ngSubmit)="onRegisterUser(registerForm)">
+    <div class="form-row">
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="fname">First Name</label>
+          <input class="form-control" type="text" id="fname" name="fname" ngModel #fname="ngModel">
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="mname">Middle Name</label>
+          <input class="form-control" type="text" id="mname" name="mname" ngModel #mname="ngModel">
+        </div>
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-group">
+          <label for="lname">Last Name</label>
+          <input class="form-control" type="text" id="lname" name="lname" ngModel #lname="ngModel">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+
+      <div class="col-sm-3">
+        <label for="">Gender</label>
+        <div class="form-group bg-white center" id="gender" style="width: 100%; border-radius: 3px;">
+          <div class="form-check form-check-inline text-dark">
+            <input class="form-check-input" required value="Male" type="radio" name="gender" ngModel id="male"
+              #gender="ngModel">
+            <label class="form-check-label" for="male">Male</label>
+          </div>
+          <div class="form-check form-check-inline text-dark">
+            <input class="form-check-input" required value="Female" type="radio" name="gender" ngModel id="female"
+              #gender="ngModel">
+            <label class="form-check-label" for="female">Female</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-9">
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input class="form-control" type="text" required placeholder="" name="address" ngModel #address="ngModel">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-row">
+      <div class="col-sm-4">
+        <label for="">Mobile Number</label>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend mr-1">
+              <div class="input-group-text">+91</div>
+            </div>
+            <input pattern="[1-9]{1}[0-9]{9}" type="tel" minlength="10" maxlength="10" required
+              placeholder="Phone number" class="form-control mt-0" name="phone" ngModel #phone="ngModel">
+          </div>
+          <div class="mb-0 mt-1" *ngIf="phone.invalid && phone.touched && phone.dirty">
+            <div class="m-0" role="alert" class="alert alert-danger p-0 m-0">
+              <p class="p-1 m-0">Enter a 10 digit mobile number</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="register-btn">
+      <button class="btn"
+          type="submit">Add</button>
+  </div>
+
+  </form>
+</div>

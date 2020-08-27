@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background: linear-gradient(321deg, rgba(239,67,35,1) 0%, rgba(254,107,79,1) 100%);
+  height: max-content; min-height: 100vh; width: 100%;
+}

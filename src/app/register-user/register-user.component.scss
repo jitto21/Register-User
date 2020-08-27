@@ -1,0 +1,62 @@
+$text-color1: #ffffff;
+$text-color2: #303030;
+$box-shadow-md: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06);
+$box-shadow-sm: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+0 6.7px 5.3px rgba(0, 0, 0, 0.048);
+
+.form-wrapper {
+  // height: 68vh;
+  width: 100%;
+  #heading {
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: $text-color1;
+    margin-bottom: 1em;
+  }
+
+  form {
+    padding: 1em;
+    background-color: #ffffff71;
+    border-radius: 10px;
+    box-shadow: $box-shadow-md;
+    label {
+      font-weight: bold;
+      font-size: 16px;
+      color: $text-color2;
+    }
+    .form-row {
+    }
+    .register-btn {
+      width: fit-content;
+      margin: 0 auto;
+      button {
+        background-color: #516df2;
+        font-weight: bold;
+        color: $text-color1;
+        box-shadow: $box-shadow-sm;
+        transition: all 0.2s ease-in-out;
+        &:hover {
+          background-color: #4160f0;
+        }
+      }
+    }
+  }
+}
+
+.center {
+  // width: 70%;
+  // margin: 0 auto;
+}
+
+#gender {
+  padding: 6px 12px;
+}
+
+@media(min-width: 1024px) {
+  form {
+    width: 60%;
+    margin: 0 auto;
+  }
+}
