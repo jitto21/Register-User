@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-show-user',
@@ -7,17 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShowUserComponent implements OnInit {
 
-  public users = [
-    {fname: 'John', mname: '', lname: 'Wick',gender: 'Male', mobile: '2255', address: '82-92 Beaver Street at Pearl Street, New York City' },
-    {fname: 'John', mname: '', lname: 'Wick',gender: 'Female', mobile: '2255', address: '82-92 Beaver Street at Pearl Street, New York City' },
-    {fname: 'John', mname: '', lname: 'Wick',gender: 'Male', mobile: '2255', address: '82-92 Beaver Street at Pearl Street, New York City' },
-    {fname: 'John', mname: '', lname: 'Wick',gender: 'Male', mobile: '2255', address: '82-92 Beaver Street at Pearl Street, New York City' },
-    {fname: 'John', mname: '', lname: 'Wick',gender: 'Female', mobile: '2255', address: '82-92 Beaver Street at Pearl Street, New York City' }
-  ]
+  public users = []
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
+    this.users = this.userService.fetchUsers();
   }
 
 }

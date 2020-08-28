@@ -1,7 +1,8 @@
 <div class="wrapper">
   <div class="card" *ngFor="let user of users">
     <div class="card-img">
-      <img [src]="'../assets/users/'+user.mobile+'.jpg'" [alt]="'../assets/users/default_1.png'">
+      <img [src]="'../assets/users/default_1.png'"
+      [alt]="user.fname">
     </div>
     <div class="card-name">
       <p>{{ user.fname }} {{ user.mname }} {{ user.lname }}</p>
@@ -13,7 +14,7 @@
       <p><i class="fa fa-address-book" style="font-size:24px"></i> {{ user.address }}</p>
     </div>
     <div class="card-mobile">
-      <p><i class="fa fa-phone-square" style="font-size:24px"></i> <a [href]="'tel:'+user.mobile"> {{ user.mobile }}</a></p>
+      <p> <a [href]="'tel:'+user.mobile"><i class="fa fa-phone-square" style="font-size:24px"></i> {{ user.mobile }}</a></p>
     </div>
   </div>
 </div>

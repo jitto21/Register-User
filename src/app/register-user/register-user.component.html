@@ -27,7 +27,56 @@
 
     <div class="form-row">
 
+      <div class="col-sm-9">
+        <div class="form-group">
+          <label for="address">Address <span class="required-icon">*</span></label>
+          <input class="form-control" type="text" id="address" placeholder="" name="address" ngModel #address="ngModel"
+            required>
+        </div>
+      </div>
+
       <div class="col-sm-3">
+        <div class="form-group">
+          <label for="pin">PIN Code<span class="required-icon">*</span></label>
+          <input class="form-control" pattern="[1-9]{1}[0-9]{5}" minlength="6" maxlength="6" type="text" id="pin" placeholder="6 digits [0-9]"
+            name="pin" ngModel #pin="ngModel" required>
+          <div class="mb-0 mt-1" *ngIf="pin.invalid && pin.touched && pin.value!==''">
+            <div class="m-0" role="alert" class="alert alert-dismissible p-0 m-0">
+              <p class="p-1 m-0">Enter a 6 digit valid PIN code</p>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="form-row">
+
+      <div class="col-sm-4">
+        <label for="">Mobile Number <span class="required-icon">*</span></label>
+        <div class="form-group">
+          <div class="input-group">
+            <div class="input-group-prepend mr-1">
+              <div class="input-group-text">+91</div>
+            </div>
+            <input pattern="[1-9]{1}[0-9]{9}" type="tel" minlength="10" maxlength="10" required placeholder="9087654321"
+              class="form-control mt-0" name="mobile" ngModel #mobile="ngModel">
+          </div>
+          <div class="mb-0 mt-1" *ngIf="mobile.invalid && mobile.touched && mobile.value!==''">
+            <div class="m-0" role="alert" class="alert alert-dismissible p-0 m-0">
+              <p class="p-1 m-0">Enter a 10 digit mobile number</p>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-5">
         <label for="">Gender <span class="required-icon">*</span></label>
         <div class="form-group bg-white center" id="gender" style="width: 100%; border-radius: 3px;">
           <div class="form-check form-check-inline text-dark">
@@ -43,37 +92,17 @@
         </div>
       </div>
 
-      <div class="col-sm-9">
+      <div class="col-sm-3">
         <div class="form-group">
-          <label for="address">Address <span class="required-icon">*</span></label>
-          <input class="form-control" type="text" id="address" placeholder="" name="address" ngModel #address="ngModel"
+          <label for="dob">Date of Birth <span class="required-icon">*</span></label>
+          <input class="form-control" type="date" id="dob" placeholder="dd-mm-yyyy" name="dob" ngModel #dob="ngModel"
             required>
         </div>
       </div>
 
     </div>
 
-    <div class="form-row">
-      <div class="col-sm-4">
-        <label for="">Mobile Number <span class="required-icon">*</span></label>
-        <div class="form-group">
-          <div class="input-group">
-            <div class="input-group-prepend mr-1">
-              <div class="input-group-text">+91</div>
-            </div>
-            <input pattern="[1-9]{1}[0-9]{9}" type="tel" minlength="10" maxlength="10" required
-              placeholder="Phone number" class="form-control mt-0" name="phone" ngModel #phone="ngModel">
-          </div>
-          <div class="mb-0 mt-1" *ngIf="phone.invalid && phone.touched && phone.value!==''">
-            <div class="m-0" role="alert" class="alert alert-dismissible p-0 m-0">
-              <p class="p-1 m-0">Enter a 10 digit mobile number</p>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <!-- <div class="form-row">
 
       <div class="col-sm-3 col-6 upload-wrapper">
         <label for="">Profile Picture</label>
@@ -88,7 +117,7 @@
           <img [src]="imgPreview" [alt]="fname.value">
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="register-btn mt-3">
       <button class="btn" type="submit">Add</button>
