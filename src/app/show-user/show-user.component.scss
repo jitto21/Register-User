@@ -60,6 +60,12 @@ $box-shadow-sm: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
       grid-column: 2/11;
       grid-row: 7;
     }
+
+    .card-dropdown {
+      place-self: center end;
+      grid-column: 10;
+      grid-row: 1;
+    }
   }
 }
 
@@ -70,5 +76,11 @@ i {
 a{
   text-decoration: none;
   color: $text-color3;
+}
+
+@media(max-width: 768px) {
+  .wrapper {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 }
 

@@ -1,4 +1,5 @@
 export interface RegisterUserModel {
+  uid: number,
   fname: string,
   mname?: string,
   lname: string,

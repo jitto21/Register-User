@@ -16,5 +16,15 @@
     <div class="card-mobile">
       <p> <a [href]="'tel:'+user.mobile"><i class="fa fa-phone-square" style="font-size:24px"></i> {{ user.mobile }}</a></p>
     </div>
+    <div class="card-dropdown">
+      <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" (click)="onEdit(user)">Edit</a>
+        <a class="dropdown-item" (click)="onDelete()">Delete</a>
+      </div>
+    </div>
+
   </div>
 </div>
