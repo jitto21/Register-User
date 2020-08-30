@@ -6,6 +6,11 @@ $box-shadow-sm: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   padding: 0;
   margin: 0;
 }
+
+#note {
+  font-weight: bold;
+}
+
 .wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -48,17 +53,22 @@ $box-shadow-sm: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
 
     .card-gender {
       grid-column: 2/11;
-      grid-row: 5;
+      grid-row: 6;
     }
 
     .card-address {
       grid-column: 2/11;
-      grid-row: 6;
+      grid-row: 7;
     }
 
     .card-mobile {
       grid-column: 2/11;
-      grid-row: 7;
+      grid-row: 8;
+    }
+
+    .card-birthday {
+      grid-column: 2/11;
+      grid-row: 9;
     }
 
     .card-dropdown {
@@ -69,6 +79,15 @@ $box-shadow-sm: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
   }
 }
 
+div.dropdown-menu {
+  a:nth-child(1) {
+    cursor: pointer;
+  }
+  a:nth-child(2) { //make delete restricted
+    cursor: not-allowed;
+  }
+}
+
 i {
   color: #516df2;
 }
@@ -76,6 +95,20 @@ i {
 a{
   text-decoration: none;
   color: $text-color3;
+}
+
+#no-users {
+  border: none;
+  p{
+    font-weight: bold;
+    color: $text-color3;
+    a{
+      color: #516df2;
+      &:hover {
+        color: #4160f0;
+      }
+    }
+  }
 }
 
 @media(max-width: 768px) {

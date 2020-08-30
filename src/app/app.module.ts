@@ -8,6 +8,9 @@ import { RegisterUserComponent } from './register-user/register-user.component';
 import { ShowUserComponent } from './show-user/show-user.component';
 import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from './modal/modal.component';
+import { CommonModule, DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,15 +18,21 @@ import { NavComponent } from './nav/nav.component';
     RegisterUserComponent,
     ShowUserComponent,
     HomeComponent,
-    NavComponent
+    NavComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [DatePipe],
+  entryComponents: [
+    ModalComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

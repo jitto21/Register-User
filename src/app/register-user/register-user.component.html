@@ -66,7 +66,7 @@
           </div>
           <div class="mb-0 mt-1" *ngIf="registerForm.get('mobile').invalid && registerForm.get('mobile').touched && registerForm.get('mobile').value!==''">
             <div class="m-0" role="alert" class="alert alert-dismissible p-0 m-0">
-              <p class="p-1 m-0">Enter a 10 digit registerForm.get('mobile') number</p>
+              <p class="p-1 m-0">Enter a 10 digit mobile number</p>
               <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
@@ -92,7 +92,7 @@
       <div class="col-sm-3">
         <div class="form-group">
           <label for="dob">Date of Birth <span class="required-icon">*</span></label>
-          <input class="form-control" type="date" id="dob" placeholder="dd-mm-yyyy" formControlName="dob">
+          <input class="form-control" type="date" [max]="todayDate" id="dob" placeholder="dd-mm-yyyy" formControlName="dob">
         </div>
       </div>
 
@@ -116,7 +116,7 @@
     </div> -->
 
     <div class="register-btn mt-3">
-      <button class="btn" type="submit"><span *ngIf="editMode">Update</span><span *ngIf="!editMode">Add</span></button>
+      <button [disabled]="!registerForm.valid" class="btn" type="submit"><span *ngIf="editMode">Update</span><span *ngIf="!editMode">Add</span></button>
     </div>
 
   </form>

@@ -1,30 +1,48 @@
-<div class="wrapper">
-  <div class="card" *ngFor="let user of users">
-    <div class="card-img">
-      <img [src]="'../assets/users/default_1.png'"
-      [alt]="user.fname">
-    </div>
-    <div class="card-name">
-      <p>{{ user.fname }} {{ user.mname }} {{ user.lname }}</p>
-    </div>
-    <div class="card-gender">
-      <p><i class="fa" [ngClass]="{'fa-male': user.gender==='Male', 'fa-female': user.gender!=='Male'}" style="font-size:28px"></i> {{ user.gender }}</p>
-    </div>
-    <div class="card-address">
-      <p><i class="fa fa-address-book" style="font-size:24px"></i> {{ user.address }}</p>
-    </div>
-    <div class="card-mobile">
-      <p> <a [href]="'tel:'+user.mobile"><i class="fa fa-phone-square" style="font-size:24px"></i> {{ user.mobile }}</a></p>
-    </div>
-    <div class="card-dropdown">
-      <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
-      </button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a class="dropdown-item" (click)="onEdit(user)">Edit</a>
-        <a class="dropdown-item" (click)="onDelete()">Delete</a>
+<div class="content" *ngIf="users.length>0; else noUsers">
+  <div class="alert alert-primary alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+      <span class="sr-only">Close</span>
+    </button>
+    <p id="note">Note: All user data will be lost if you close your browser</p>
+  </div>
+  <div class="wrapper">
+    <div class="card" *ngFor="let user of users">
+      <div class="card-img">
+        <img [src]="'../assets/users/default_1.png'"
+        [alt]="user.fname">
       </div>
-    </div>
+      <div class="card-name">
+        <p>{{ user.fname }} {{ user.mname }} {{ user.lname }}</p>
+      </div>
+      <div class="card-gender">
+        <p><i class="fa" [ngClass]="{'fa-male': user.gender==='Male', 'fa-female': user.gender!=='Male'}" style="font-size:28px"></i> {{ user.gender }}</p>
+      </div>
+      <div class="card-address">
+        <p><i class="fa fa-address-book" style="font-size:24px"></i> {{ user.address }}, {{ user.pin }}</p>
+      </div>
+      <div class="card-mobile">
+        <p> <a [href]="'tel:'+user.mobile"><i class="fa fa-phone-square" style="font-size:24px"></i> {{ user.mobile }}</a></p>
+      </div>
+      <div class="card-birthday">
+        <p><i class="fa fa-birthday-cake" style="font-size:24px"></i> {{ user.dob }}, {{ user.age }} years</p>
+      </div>
+      <div class="card-dropdown">
+        <button class="btn" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" (click)="onEdit(user)">Edit</a>
+          <a class="dropdown-item" (click)="onDelete()">Delete</a>
+        </div>
+      </div>
 
+    </div>
   </div>
 </div>
+
+<ng-template #noUsers>
+  <div class="alert alert-warning" id="no-users" role="alert">
+    <p>No users found. <a routerLink="/register">Goto Register</a> and add a user</p>
+  </div>
+</ng-template>

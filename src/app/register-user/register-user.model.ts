@@ -7,4 +7,5 @@ export interface RegisterUserModel {
   pin: number,
   mobile: number,
   gender: string,
+  age?: number
 }
