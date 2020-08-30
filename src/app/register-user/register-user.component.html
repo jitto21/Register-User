@@ -1,5 +1,5 @@
 <div class="form-wrapper">
-  <h5 id="heading">New User</h5>
+  <h5 id="heading"><span *ngIf="editMode">Edit</span><span *ngIf="!editMode">New</span> User</h5>
   <form [formGroup]="registerForm" class="" (ngSubmit)="onRegisterUser()">
     <div class="form-row">
 
