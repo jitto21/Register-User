@@ -5,9 +5,10 @@ import { ShowUserComponent } from './show-user/show-user.component';
 
 
 const routes: Routes = [
-  {path: 'register', component: RegisterUserComponent},
-  {path: 'show', component: ShowUserComponent}
-
+  { path:'', redirectTo: '/register', pathMatch: 'full' },
+  { path: 'register', component: RegisterUserComponent },
+  { path: 'show', component: ShowUserComponent },
+  { path: '**', component: RegisterUserComponent }
 ];
 
 @NgModule({
